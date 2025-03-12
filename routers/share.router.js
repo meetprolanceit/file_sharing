@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { Router } = require('express');
-const { initialPageRender, uploadFile } = require('../controller/share.controller');
+const { initialPageRender, uploadFile, fileReceiver } = require('../controller/share.controller');
 
 router.get('/', initialPageRender);
 router.post('/upload', uploadFile);
+router.get('/:id', fileReceiver);
 
 module.exports = router;
